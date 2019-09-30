@@ -1,6 +1,6 @@
 {
   "name": "tiberius-s",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tiberius Silivestru business card",
   "main": "/bin/card.js",
   "bin": {
