@@ -17,7 +17,7 @@ const options = {
 const data = {
   name: chalk.white("       Tiberius Silivestru"),
   handle: chalk.magentaBright("@tiberius_s"),
-  work: chalk.white("Software Developer @ Reachmail Inc."),
+  work: chalk.white("Software Engineer @ Northwestern Mutual"),
   twitter: chalk.cyanBright("https://twitter.com/") + chalk.cyanBright("tiberius_s"),
   npm: chalk.cyanBright("https://npmjs.com/") + chalk.cyanBright("~tiberius-s"),
   github: chalk.cyanBright("https://github.com/") + chalk.cyanBright("tiberius-s"),
@@ -34,7 +34,7 @@ const data = {
 // Each entry as a line.
 const newline = "\n";
 const heading = `${data.name} / ${data.handle}${newline.repeat(2)}`;
-const workLine = `${data.labelWork}  ${data.work}${newline.repeat(2)}`;
+const workLine = `    ${data.work}${newline.repeat(2)}`;
 const githubLine = `${data.labelGitHub}  ${data.github}${newline}`;
 const npmLine = `${data.labelnpm}  ${data.npm}${newline}`;
 const linkedinLine = `${data.labelLinkedIn}  ${data.linkedin}${newline}`;
