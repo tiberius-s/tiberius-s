@@ -1,8 +1,6 @@
 My name's Tiberius, here's my card 👇
 
-# Usage
-
-Via npx:
+### Via npx:
 
 ```
 npx tiberius-s
