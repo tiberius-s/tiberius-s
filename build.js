@@ -1,47 +1,37 @@
-"use strict";
+import { writeFileSync } from "fs";
+import { URL } from "url";
+import boxen from "boxen";
+import chalk from "chalk";
 
-// Pull in our modules
-const chalk = require("chalk");
-const boxen = require("boxen");
-const fs = require("fs");
-const path = require("path");
-
-// Define options for Boxen
 const options = {
   padding: 1,
   margin: 1,
-  borderStyle: "round"
+  borderStyle: "round",
 };
 
-// Text + chalk definitions
 const data = {
-  name: chalk.white("       Tiberius Silivestru"),
-  handle: chalk.magentaBright("@tiberius_s"),
+  name: chalk.magenta("              Tiberius Silivestru"),
   work: chalk.white("Software Engineer @ Northwestern Mutual"),
-  twitter: chalk.cyanBright("https://twitter.com/") + chalk.cyanBright("tiberius_s"),
-  npm: chalk.cyanBright("https://npmjs.com/") + chalk.cyanBright("~tiberius-s"),
-  github: chalk.cyanBright("https://github.com/") + chalk.cyanBright("tiberius-s"),
-  linkedin: chalk.cyanBright("https://linkedin.com/in/") + chalk.cyanBright("tsilivestru"),
+  npm: chalk.cyan("https://npmjs.com/") + chalk.cyan("~tiberius-s"),
+  github: chalk.cyan("https://github.com/") + chalk.cyan("tiberius-s"),
+  linkedin: chalk.cyan("https://linkedin.com/in/") + chalk.cyan("tsilivestru"),
   npx: chalk.green("npx") + " " + chalk.white("tiberius-s"),
-  labelWork: chalk.white.bold("     Work:"),
-  labelTwitter: chalk.white.bold("  Twitter:"),
-  labelnpm: chalk.white.bold("      npm:"),
-  labelGitHub: chalk.white.bold("   GitHub:"),
-  labelLinkedIn: chalk.white.bold(" LinkedIn:"),
-  labelCard: chalk.white.bold("     Card:")
+  labelWork: chalk.blue.italic("     Work:"),
+  labelnpm: chalk.blue.italic("      npm:"),
+  labelGitHub: chalk.blue.italic("   GitHub:"),
+  labelLinkedIn: chalk.blue.italic(" LinkedIn:")
 };
 
 // Each entry as a line.
 const newline = "\n";
-const heading = `${data.name} / ${data.handle}${newline.repeat(2)}`;
+const heading = `${data.name}${newline.repeat(2)}`;
 const workLine = `    ${data.work}${newline.repeat(2)}`;
 const githubLine = `${data.labelGitHub}  ${data.github}${newline}`;
 const npmLine = `${data.labelnpm}  ${data.npm}${newline}`;
-const linkedinLine = `${data.labelLinkedIn}  ${data.linkedin}${newline}`;
-const twitterLine = `${data.labelTwitter}  ${data.twitter}${newline.repeat(2)}`;
-const cardLine = `${data.labelCard}  ${data.npx}`;
+const linkedInLine = `${data.labelLinkedIn}  ${data.linkedin}${newline.repeat(2)}`;
+const cardLine = `               ${data.npx}`;
 
-const lines = [heading, workLine, githubLine, npmLine, linkedinLine, twitterLine, cardLine];
+const lines = [heading, workLine, githubLine, npmLine, linkedInLine, cardLine];
 const output = lines.reduce((x, y) => x + y);
 
-fs.writeFileSync(path.join(__dirname, "bin/output"), chalk.yellow(boxen(output, options)));
+writeFileSync(new URL("bin/output", import.meta.url), chalk.yellow(boxen(output, options)));

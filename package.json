@@ -3,8 +3,9 @@
   "version": "1.1.0",
   "description": "Tiberius Silivestru business card",
   "main": "/bin/card.js",
+  "type": "module",
   "bin": {
-    "tiberius-s": "./bin/card.js"
+    "tiberius-s": "./bin/card.cjs"
   },
   "repository": {
     "type": "git",
@@ -13,8 +14,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "node build.js",
-    "dev": "npm run build && node ./bin/card.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run build && node ./bin/card.cjs"
   },
   "keywords": [
     "npm card",
@@ -28,7 +28,7 @@
     "bin/output"
   ],
   "devDependencies": {
-    "boxen": "^2.1.0",
-    "chalk": "^2.4.2"
+    "boxen": "^6.2.1",
+    "chalk": "^4.1.2"
   }
 }
