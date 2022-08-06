@@ -1,9 +1,14 @@
 {
   "name": "tiberius-s",
-  "version": "1.2.0",
+  "version": "1.2.1",
+  "author": "Tiberius Silivestru <tiberius.silivestru@gmail.com>",
   "description": "Tiberius Silivestru business card",
+  "license": "MIT",
   "main": "/bin/card.js",
   "type": "module",
+  "engines": {
+    "node": ">=12.22"
+  },
   "bin": {
     "tiberius-s": "./bin/card.cjs"
   },
@@ -11,24 +16,22 @@
     "type": "git",
     "url": "https://github.com/tiberius-s/tiberius-s.git"
   },
-  "scripts": {
-    "prepublish": "npm run build",
-    "build": "node build.js",
-    "dev": "npm run build && node ./bin/card.cjs"
-  },
   "keywords": [
     "npm card",
     "npx card",
     "business card"
   ],
-  "author": "Tiberius Silivestru <tiberius.silivestru@gmail.com>",
-  "license": "MIT",
   "files": [
     "bin/card.js",
     "bin/output"
   ],
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "node build.js",
+    "dev": "npm run build && node ./bin/card.cjs"
+  },
   "devDependencies": {
-    "boxen": "^6.2.1",
-    "chalk": "^4.1.2"
+    "boxen": "^7.0.0",
+    "chalk": "^5.0.1"
   }
 }
